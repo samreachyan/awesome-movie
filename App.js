@@ -6,28 +6,15 @@
  * @flow strict-local
  */
 
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {
-  Text,
   View
 } from 'react-native';
-
-import { getPopularMovie } from './services/services';
+import HomeScreen from './screens/HomeScreen';
 
 
 const App = () => {
-  const [movie, setMovie] = useState('');
-  const [err, setErr] = useState(null);
-
-  useEffect(() => {
-    getPopularMovie().then(movie => {
-      setMovie(movie[0]);
-    }).catch(err =>{
-      setErr(err)
-    });
-
-  }, []);
-
+  
   return (
     <View
       style={{
@@ -36,11 +23,7 @@ const App = () => {
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
       }}>
-      <Text>Movie Name: {movie.original_title} </Text>
-      <Text>Movie Language: {movie.original_language} </Text>
-      {/* <Text>Overview: {movie.overview} </Text> */}
-      <Text>Release data: {movie.release_date} </Text>
-      { err ? <Text style={{ color: 'red' }}>Our server is error.</Text> : null }
+        <HomeScreen />
     </View>
   );
 };

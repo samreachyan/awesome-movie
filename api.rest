@@ -1,10 +1,11 @@
-###  Get Population movies
+###  Get info
 GET https://api.themoviedb.org/3/movie/550?api_key=dc1ee0c967c30a5d937bc643addd28ae HTTP/1.1
 
 ###  Get movie details
 GET https://api.themoviedb.org/3/movie/631843?api_key=dc1ee0c967c30a5d937bc643addd28ae&language=en-US HTTP/1.1
 
-### Get movies
+### Get popular movies
 GET https://api.themoviedb.org/3/movie/popular?api_key=dc1ee0c967c30a5d937bc643addd28ae&language=en-US&page=1 HTTP/1.1
 
-### 
+### Get upcomming movies
+GET https://api.themoviedb.org/3/movie/upcoming?api_key=dc1ee0c967c30a5d937bc643addd28ae&language=en-US&page=1 HTTP/1.1
